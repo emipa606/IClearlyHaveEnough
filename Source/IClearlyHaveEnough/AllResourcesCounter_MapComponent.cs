@@ -8,6 +8,8 @@ namespace IClearlyHaveEnough
 	// Token: 0x02000002 RID: 2
 	internal class AllResourcesCounter_MapComponent : MapComponent
 	{
+        private List<string> ignoredDefs = new List<string>();
+
 		// Token: 0x06000001 RID: 1 RVA: 0x00002050 File Offset: 0x00000250
 		public AllResourcesCounter_MapComponent(Map map) : base(map)
 		{
@@ -42,9 +44,10 @@ namespace IClearlyHaveEnough
 			{
 				return this.resourceCounts[def];
 			}
-			if (def.resourceReadoutPriority != ResourceCountPriority.Uncounted)
+			if (def.resourceReadoutPriority != ResourceCountPriority.Uncounted && !ignoredDefs.Contains(def.defName))
 			{
-				Log.Error("AllResourcesCounter_MapComponent from mod IClearlyHaveEnough was requested for a count of a ThingDef that does not have a key.", false);
+				if(Prefs.DevMode) Log.Warning($"AllResourcesCounter_MapComponent from mod IClearlyHaveEnough was requested for a count of a ThingDef that does not have a key: {def.defName}.", false);
+                ignoredDefs.Add(def.defName);
 			}
 			return 0;
 		}
@@ -53,6 +56,7 @@ namespace IClearlyHaveEnough
 		public void UpdateResourceCounts()
 		{
 			this.resourceCounts.Clear();
+            ignoredDefs = new List<string>();
 			foreach (ThingDef thingDef in this.resourceThingDefs)
 			{
 				List<Thing> list = this.map.listerThings.ThingsOfDef(thingDef);
