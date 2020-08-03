@@ -2,7 +2,7 @@
 <ModSyncNinjaData>
   <ID>d52ab8ac-5382-4a0f-927b-78101272c3f3</ID>
   <ModName>I Clearly Have Enough! (Continued)</ModName>
-  <Version>1.0.1.0</Version>
+  <Version>1.0.2.0</Version>
   <SaveBreaking>False</SaveBreaking>
   <Host name="Github">
     <Owner>emipa606</Owner>
@@ -12,7 +12,3 @@
     <Branch>master</Branch>
   </Host>
 </ModSyncNinjaData>
-
-
-
-
