@@ -59,13 +59,21 @@ namespace IClearlyHaveEnough
             ignoredDefs = new List<string>();
 			foreach (ThingDef thingDef in this.resourceThingDefs)
 			{
-				List<Thing> list = this.map.listerThings.ThingsOfDef(thingDef);
-				int num = 0;
-				for (int i = 0; i < list.Count; i++)
+
+                try
+                {
+                    List<Thing> list = this.map.listerThings.ThingsOfDef(thingDef);
+                    int num = 0;
+                    for (int i = 0; i < list.Count; i++)
+                    {
+                        num += list[i].stackCount;
+                    }
+                    this.resourceCounts.Add(thingDef, num);
+                }
+                catch (Exception exception)
 				{
-					num += list[i].stackCount;
+					if (Prefs.DevMode) Log.Warning($"UpdateResourceCounts from mod IClearlyHaveEnough was requested for a count of a ThingDef that it cannot find: {thingDef.defName}.\n{exception}", false);
 				}
-				this.resourceCounts.Add(thingDef, num);
 			}
 		}
 
