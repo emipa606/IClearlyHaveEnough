@@ -72,7 +72,7 @@ namespace IClearlyHaveEnough
                 }
                 catch (Exception exception)
 				{
-					if (Prefs.DevMode) Log.Warning($"UpdateResourceCounts from mod IClearlyHaveEnough was requested for a count of a ThingDef that it cannot find: {thingDef.defName}.\n{exception}", false);
+					if (Prefs.DevMode) Log.ErrorOnce($"UpdateResourceCounts from mod IClearlyHaveEnough was requested for a count of a ThingDef that it cannot find: {thingDef.defName}.\n{exception}", thingDef.defName.GetHashCode());
 				}
 			}
 		}
