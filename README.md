@@ -5,6 +5,8 @@
 Update of ChippedChaps mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=1544107509
 
+- Added japanese translation, thanks Ɖjur!
+
 ![Image](https://i.imgur.com/pufA0kM.png)
 
 	

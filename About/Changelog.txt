@@ -1,5 +1,8 @@
 # Changelog for IClearlyHaveEnough
 
+1.4.1 - Mod updated for 1.4 and passed autotests
+
+
 1.3.1 - Added japanese tranlation, thanks Ɖjur!
 
 
