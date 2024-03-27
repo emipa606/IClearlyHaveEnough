@@ -7,8 +7,7 @@ using Verse;
 
 namespace IClearlyHaveEnough;
 
-[HarmonyPatch(typeof(Designator_Build))]
-[HarmonyPatch("DrawPanelReadout")]
+[HarmonyPatch(typeof(Designator_Build), nameof(Designator_Build.DrawPanelReadout))]
 internal class PatcherDrawPanelReadout
 {
     private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)

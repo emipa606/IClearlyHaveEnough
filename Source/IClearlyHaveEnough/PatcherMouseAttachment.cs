@@ -7,8 +7,7 @@ using Verse;
 
 namespace IClearlyHaveEnough;
 
-[HarmonyPatch(typeof(Designator_Build))]
-[HarmonyPatch("DrawPlaceMouseAttachments")]
+[HarmonyPatch(typeof(Designator_Build), "DrawPlaceMouseAttachments")]
 internal class PatcherMouseAttachment
 {
     private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)

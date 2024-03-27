@@ -5,16 +5,12 @@ using Verse;
 
 namespace IClearlyHaveEnough;
 
-internal class AllResourcesCounter_MapComponent : MapComponent
+internal class AllResourcesCounter_MapComponent(Map map) : MapComponent(map)
 {
     private readonly Dictionary<ThingDef, int> resourceCounts = new Dictionary<ThingDef, int>();
-    private List<string> ignoredDefs = new List<string>();
+    private List<string> ignoredDefs = [];
 
-    private HashSet<ThingDef> resourceThingDefs = new HashSet<ThingDef>();
-
-    public AllResourcesCounter_MapComponent(Map map) : base(map)
-    {
-    }
+    private HashSet<ThingDef> resourceThingDefs = [];
 
     public override void MapComponentTick()
     {
@@ -37,9 +33,9 @@ internal class AllResourcesCounter_MapComponent : MapComponent
 
     public int GetCount(ThingDef def)
     {
-        if (resourceCounts.ContainsKey(def))
+        if (resourceCounts.TryGetValue(def, out var count))
         {
-            return resourceCounts[def];
+            return count;
         }
 
         if (def.resourceReadoutPriority == ResourceCountPriority.Uncounted || ignoredDefs.Contains(def.defName))
@@ -61,7 +57,7 @@ internal class AllResourcesCounter_MapComponent : MapComponent
     public void UpdateResourceCounts()
     {
         resourceCounts.Clear();
-        ignoredDefs = new List<string>();
+        ignoredDefs = [];
         foreach (var thingDef in resourceThingDefs)
         {
             try
@@ -90,8 +86,11 @@ internal class AllResourcesCounter_MapComponent : MapComponent
     private void RefillDefs()
     {
         resourceThingDefs.Clear();
-        resourceThingDefs = new HashSet<ThingDef>(from def in DefDatabase<ThingDef>.AllDefs
+        resourceThingDefs =
+        [
+            ..from def in DefDatabase<ThingDef>.AllDefs
             where def.CountAsResource
-            select def);
+            select def
+        ];
     }
 }

@@ -4,8 +4,7 @@ using Verse;
 
 namespace IClearlyHaveEnough;
 
-[HarmonyPatch(typeof(MainTabWindow))]
-[HarmonyPatch("PostOpen")]
+[HarmonyPatch(typeof(MainTabWindow), nameof(MainTabWindow.PostOpen))]
 internal class UpdateOnArchitectOpen
 {
     private static void Postfix(MainTabWindow __instance)
