@@ -1,4 +1,4 @@
-# IClearlyHaveEnough
+# [I Clearly Have Enough! (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2023661266)
 
 ![Image](https://i.imgur.com/buuPQel.png)
 
@@ -8,10 +8,8 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=1544107509
 - Added japanese translation, thanks Ɖjur!
 
 ![Image](https://i.imgur.com/pufA0kM.png)
-
 	
 ![Image](https://i.imgur.com/Z4GOv8H.png)
-
 
 **Legacy 1.0 Version**
 For now, please use the updated version by Mlie here:
@@ -41,13 +39,12 @@ This mod now only counts all the resources on the map every 204 ticks (3.4 secon
 
 -  See if the the error persists if you just have this mod and its requirements active.
 -  If not, try adding your other mods until it happens again.
--  Post your error-log using https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib or the standalone https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404]Uploader and command Ctrl+F12
+-  Post your error-log using [HugsLib](https://steamcommunity.com/workshop/filedetails/?id=818773962) or the standalone [Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404) and command Ctrl+F12
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
--  Use https://github.com/RimSort/RimSort/releases/latest]RimSort to sort your mods
+-  Use [RimSort](https://github.com/RimSort/RimSort/releases/latest) to sort your mods
 
+ 
 
-
-https://steamcommunity.com/sharedfiles/filedetails/changelog/2023661266]![Image](https://img.shields.io/github/v/release/emipa606/IClearlyHaveEnough?label=latest%20version&style=plastic&color=9f1111&labelColor=black)
-
+[![Image](https://img.shields.io/github/v/release/emipa606/IClearlyHaveEnough?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2023661266) | tags:  mapcount

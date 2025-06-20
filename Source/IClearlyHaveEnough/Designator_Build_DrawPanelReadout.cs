@@ -7,8 +7,8 @@ using Verse;
 
 namespace IClearlyHaveEnough;
 
-[HarmonyPatch(typeof(Designator_Build), "DrawPlaceMouseAttachments")]
-internal class PatcherMouseAttachment
+[HarmonyPatch(typeof(Designator_Build), nameof(Designator_Build.DrawPanelReadout))]
+internal class Designator_Build_DrawPanelReadout
 {
     private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
     {
@@ -24,12 +24,7 @@ internal class PatcherMouseAttachment
                 (MethodInfo)codeInstruction.operand == typeof(ResourceCounter).GetMethod("GetCount"))
             {
                 yield return new CodeInstruction(OpCodes.Call,
-                    typeof(PatcherMouseAttachment).GetMethod("GetPresentOnMap"));
-            }
-            else if (codeInstruction.opcode == OpCodes.Ldstr &&
-                     codeInstruction.operand.Equals("NotEnoughStoredLower"))
-            {
-                yield return new CodeInstruction(OpCodes.Ldstr, "NotEnoughPresentLower");
+                    typeof(Designator_Build_DrawPanelReadout).GetMethod(nameof(GetPresentOnMap)));
             }
             else
             {

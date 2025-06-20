@@ -7,7 +7,7 @@ namespace IClearlyHaveEnough;
 
 internal class AllResourcesCounter_MapComponent(Map map) : MapComponent(map)
 {
-    private readonly Dictionary<ThingDef, int> resourceCounts = new Dictionary<ThingDef, int>();
+    private readonly Dictionary<ThingDef, int> resourceCounts = new();
     private List<string> ignoredDefs = [];
 
     private HashSet<ThingDef> resourceThingDefs = [];
@@ -22,13 +22,8 @@ internal class AllResourcesCounter_MapComponent(Map map) : MapComponent(map)
 
     public override void FinalizeInit()
     {
-        RefillDefs();
+        refillDefs();
         UpdateResourceCounts();
-    }
-
-    public bool ShouldTrackThing(Thing thing)
-    {
-        return resourceThingDefs.Contains(thing.def);
     }
 
     public int GetCount(ThingDef def)
@@ -83,7 +78,7 @@ internal class AllResourcesCounter_MapComponent(Map map) : MapComponent(map)
         }
     }
 
-    private void RefillDefs()
+    private void refillDefs()
     {
         resourceThingDefs.Clear();
         resourceThingDefs =
