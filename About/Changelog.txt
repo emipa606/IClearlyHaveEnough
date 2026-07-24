@@ -1,5 +1,8 @@
 # Changelog for IClearlyHaveEnough
 
+1.6.2 - Fixed wrong author name
+
+
 1.6.1 - Fixed faulty harmony patch
 
 
