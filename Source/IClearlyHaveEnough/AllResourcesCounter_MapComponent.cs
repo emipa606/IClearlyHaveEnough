@@ -56,6 +56,11 @@ internal class AllResourcesCounter_MapComponent(Map map) : MapComponent(map)
 
     public void UpdateResourceCounts()
     {
+        if (resourceThingDefs.Count == 0)
+        {
+            refillDefs();
+        }
+
         resourceCounts.Clear();
         ignoredDefs = [];
         foreach (var thingDef in resourceThingDefs)
