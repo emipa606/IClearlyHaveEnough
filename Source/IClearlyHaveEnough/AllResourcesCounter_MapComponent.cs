@@ -28,6 +28,11 @@ internal class AllResourcesCounter_MapComponent(Map map) : MapComponent(map)
 
     public int GetCount(ThingDef def)
     {
+        if (def == null)
+        {
+            return 0;
+        }
+
         if (resourceCounts.TryGetValue(def, out var count))
         {
             return count;
@@ -51,6 +56,11 @@ internal class AllResourcesCounter_MapComponent(Map map) : MapComponent(map)
 
     public void UpdateResourceCounts()
     {
+        if (resourceThingDefs.Count == 0)
+        {
+            refillDefs();
+        }
+
         resourceCounts.Clear();
         ignoredDefs = [];
         foreach (var thingDef in resourceThingDefs)

@@ -11,7 +11,7 @@ internal class MainTabWindow_PostOpen
     {
         if (__instance is MainTabWindow_Architect)
         {
-            Find.CurrentMap.GetComponent<AllResourcesCounter_MapComponent>().UpdateResourceCounts();
+            Find.CurrentMap?.GetComponent<AllResourcesCounter_MapComponent>()?.UpdateResourceCounts();
         }
     }
 }

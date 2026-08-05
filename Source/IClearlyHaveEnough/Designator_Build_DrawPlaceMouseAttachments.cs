@@ -40,6 +40,6 @@ internal class Designator_Build_DrawPlaceMouseAttachments
 
     public static int GetPresentOnMap(Map map, ThingDef def)
     {
-        return map.GetComponent<AllResourcesCounter_MapComponent>().GetCount(def);
+        return map?.GetComponent<AllResourcesCounter_MapComponent>()?.GetCount(def) ?? 0;
     }
 }
