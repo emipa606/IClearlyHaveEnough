@@ -1,5 +1,8 @@
 # Changelog for IClearlyHaveEnough
 
+1.6.3 - Added some missing nullchecks, thanks Spangles
+
+
 1.6.2 - Fixed wrong author name
 
 

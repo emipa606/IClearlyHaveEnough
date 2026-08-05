@@ -6,4 +6,10 @@
     <BuildType Name="Release" />
   </Configurations>
   <Project Path="IClearlyHaveEnough/IClearlyHaveEnough.csproj" />
+  <Folder Name="/XML/About/">
+    <File Path="../About/about.xml" />
+  </Folder>
+  <Folder Name="/XML/Languages/English/Keyed/">
+    <File Path="../Languages/English/Keyed/MouseAttachment.xml" />
+  </Folder>
 </Solution>
