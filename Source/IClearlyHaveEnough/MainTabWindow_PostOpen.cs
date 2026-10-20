@@ -5,9 +5,9 @@ using Verse;
 namespace IClearlyHaveEnough;
 
 [HarmonyPatch(typeof(MainTabWindow), nameof(MainTabWindow.PostOpen))]
-internal class MainTabWindow_PostOpen
+internal static class MainTabWindow_PostOpen
 {
-    private static void Postfix(MainTabWindow __instance)
+    public static void Postfix(MainTabWindow __instance)
     {
         if (__instance is MainTabWindow_Architect)
         {
